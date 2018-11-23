@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Service Bot | Add Location</title>
+    </head>
+
+    <body>
+        
+        <h1>Add a lcoation</h1>
+
+	
+    <form method="POST" class="post-form">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit" class="save btn btn-default">Add Location</button>
+    </form>	
+
+    </body>
+</html>
