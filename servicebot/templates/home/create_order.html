@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>Service Bot | Add Location</title>
+    <title>Service Bot | Create Order</title>
 {% endblock %}
 
 {% block content %}
 <form method="POST" class="post-form">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Add Location</button>
+        <button type="submit" class="save btn btn-default">Create Order</button>
         </form>	
 {% endblock %}    

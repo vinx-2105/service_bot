@@ -18,7 +18,9 @@ from django.contrib import admin
 from home import views
 
 urlpatterns = [
-    url(r'^$', views.home_view),
+    url(r'^$', views.home_view, name='home'),
     url(r'^add_location/', views.add_location_view),
+    url(r'^create_order/', views.create_order_view),
+    url(r'^order_history/', views.order_history_view),
     
 ]
