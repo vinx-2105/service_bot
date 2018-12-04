@@ -12,5 +12,3 @@ def get_orders():
         return result
     else:
         return None
-
-print(get_orders())
