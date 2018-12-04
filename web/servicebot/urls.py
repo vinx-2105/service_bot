@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from home.resources import LocationResource, OrderResource
+
+location_resource = LocationResource()
+order_resource = OrderResource()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^home/', include('home.urls')),
     url('accounts/', include('django.contrib.auth.urls')),
+    url(r'^location_api/', include(location_resource.urls)),
+    url(r'^order_api/', include(order_resource.urls)),
 ]

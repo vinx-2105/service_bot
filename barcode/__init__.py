@@ -1,1 +1,1 @@
-from picamBarcode import BarCode
+from PiCam import PiCam

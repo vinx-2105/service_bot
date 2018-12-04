@@ -4,7 +4,7 @@ from io import BytesIO
 from pyzbar.pyzbar import decode
 from PIL import Image
 
-class picamBarcode:
+class PiCam:
 	def __init__(self):
 		pass
     
@@ -25,6 +25,3 @@ class picamBarcode:
 
 		else:
 			return None
-		
-		
-
