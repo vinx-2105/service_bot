@@ -1,1 +1,1 @@
-from MontionControl import Control
+from MotionControl import MotionControl

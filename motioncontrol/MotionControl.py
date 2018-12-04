@@ -14,7 +14,7 @@ m22=37
 sleep1=0.15
 sleep2=0.03
 
-class Control:
+class MotionControl:
 	def __init__(self):
 		self.sensors=sc.Sensors(s1,s2,s3,s4,s5)
 		self.motors=mc.MotorControl(m11,m12,m21,m22)
@@ -30,7 +30,7 @@ class Control:
 			self.motors.stop()
 			sleep(0.1)
 			newpos=self.sensors.position()
-			print "new position:" +str(newpos)	
+			print ("new position:" +str(newpos))	
 		self.motors.stop()
 		self.motors.moveForward()
 
@@ -39,9 +39,9 @@ class Control:
 		while 1: #index<len(arr)
 			position=self.sensors.position()
 			#print "arr: " 
-			print "index"+str(index)
+			print ("index"+str(index))
 			newpos=53
-			print "position:"+str(position)
+			print ("position:"+str(position))
 			if position==10 or position ==100:
 				sleep(0.1)
 				pos=self.sensors.position()
@@ -75,7 +75,7 @@ class Control:
 							self.motors.stop()
 							sleep(sleep2)
 							newpos=self.sensors.position()
-							print "new position:" +str(newpos)	
+							print ("new position:" +str(newpos))	
 						self.motors.stop()
 						self.motors.moveForward()
 					elif char=='L':
@@ -85,7 +85,7 @@ class Control:
 							self.motors.stop()
 							sleep(sleep2)
 							newpos=self.sensors.position()
-							print "new position:" +str(newpos)
+							print ("new position:" +str(newpos))
 						self.motors.stop()
 						self.motors.moveForward()
 					elif char=='R':
@@ -95,7 +95,7 @@ class Control:
 							self.motors.stop()
 							sleep(sleep2)
 							newpos=self.sensors.position()
-							print "new position:" +str(newpos)
+							print ("new position:" +str(newpos))
 						
 						self.motors.stop()
 						self.motors.moveForward()

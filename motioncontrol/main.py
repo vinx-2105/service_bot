@@ -4,6 +4,6 @@
 
 #arr = ['S','L','L','R']
 arr = ['L','R']
-import motioncontrol2 as cont
+import MotionControl as cont
 controller=cont.Control()
 controller.move(arr)
