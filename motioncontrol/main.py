@@ -3,7 +3,8 @@
 #print pos
 
 #arr = ['S','L','L','R']
-arr = ['L','R']
-import MotionControl as cont
+arr = ['R','L','R']
+import motioncontrol3 as cont
 controller=cont.Control()
+#controller.takeUTurn()
 controller.move(arr)

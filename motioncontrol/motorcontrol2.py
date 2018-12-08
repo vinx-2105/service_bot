@@ -19,7 +19,7 @@ class MotorControl:
 	
 
 	def moveForward(self):
-		print "Moving forward"
+		#print "Moving forward"
 		GPIO.output(self.motor1Pin1,GPIO.HIGH)
 		GPIO.output(self.motor1Pin2,GPIO.LOW)
 		GPIO.output(self.motor2Pin1,GPIO.HIGH)
@@ -33,7 +33,7 @@ class MotorControl:
 	
 
 	def moveBackward(self):
-		print "Moving backward"
+		#print "Moving backward"
 		GPIO.output(self.motor1Pin1,GPIO.LOW)
 		GPIO.output(self.motor1Pin2,GPIO.HIGH)
 		GPIO.output(self.motor2Pin1,GPIO.LOW)
@@ -41,7 +41,7 @@ class MotorControl:
 		
 
 	def stop(self):
-		print "stopping"
+		#print "stopping"
 		GPIO.output(self.motor1Pin1,GPIO.LOW)
 		GPIO.output(self.motor1Pin2,GPIO.LOW)
 		GPIO.output(self.motor2Pin1,GPIO.LOW)
@@ -49,7 +49,7 @@ class MotorControl:
 		
 	
 	def turnLeft(self):
-		print "turning left"
+		#print "turning left"
 		GPIO.output(self.motor1Pin1,GPIO.LOW)
 		GPIO.output(self.motor1Pin2,GPIO.LOW)
 		GPIO.output(self.motor2Pin1,GPIO.HIGH)
@@ -57,21 +57,21 @@ class MotorControl:
 		
 
 	def turnRight(self):
-		print "turning right"
+		#print "turning right"
 		GPIO.output(self.motor1Pin1,GPIO.HIGH)
 		GPIO.output(self.motor1Pin2,GPIO.LOW)
 		GPIO.output(self.motor2Pin1,GPIO.LOW)
 		GPIO.output(self.motor2Pin2,GPIO.LOW)
 		
 	def turnLeftHard(self):
-		print "turning left hard"
+#		print "turning left hard"
 		GPIO.output(self.motor1Pin1,GPIO.LOW)
 		GPIO.output(self.motor1Pin2,GPIO.HIGH)
 		GPIO.output(self.motor2Pin1,GPIO.HIGH)
 		GPIO.output(self.motor2Pin2,GPIO.LOW)
 
 	def turnRightHard(self):
-		print "turning right hard"
+#		print "turning right hard"
 		GPIO.output(self.motor1Pin1,GPIO.HIGH)
 		GPIO.output(self.motor1Pin2,GPIO.LOW)
 		GPIO.output(self.motor2Pin1,GPIO.LOW)

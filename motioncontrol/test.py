@@ -15,13 +15,26 @@ m22=37
 
 motors=mc.MotorControl(m11,m12,m21,m22)
 motors.stop()
-motors.moveForward()
+#motors.moveForward()
+#sleep(5)
+#motors.turnRightHard()
+motors.turnLeftHard()
+#motors.moveForward()
+#motors.moveBackward()
 sleep(5)
-motors.turnLeft()
-sleep(5)
-motors.turnRight()
-sleep(5)
-motors.stop()	
+#motors.moveForward()
+#sleep(0.2)
+#i=1
+#sum=0
+#while i<=40:
+#	motors.moveForward()
+#	sleep(0.01)
+#	motors.stop()
+#	sleep(0.04)
+	#if pos==10 or pos==100:
+	#	sum=sum+1
+#	i=i+1
+#motors.stop()	
 	
 				#if end point then break
 		#	elif position==2 :

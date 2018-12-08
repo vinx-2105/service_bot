@@ -21,7 +21,7 @@ class PiCam:
 		if decoded_image:
 			#returns the value of the data
 			#if successful
-			return decoded_image[0][0]
+			return str(int(decoded_image[0][0]))
 
 		else:
 			return None
