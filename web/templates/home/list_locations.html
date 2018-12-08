@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Service Bot | Locations</title>
+{% endblock %}
+
+{% block content %}
+<ul>
+    {% if locations %}
+        {% for location in locations %}
+            <li>{{location.name}} - {{location.path}}</li>
+        {% endfor %}
+    {% else %}
+        <h5>No Locations added so far</h5>
+    {% endif %}
+</ul>
+
+{% endblock %}    

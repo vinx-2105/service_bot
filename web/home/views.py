@@ -46,3 +46,10 @@ def create_order_view(request):
 def order_history_view(request):
 	context = {'orders':Order.objects.all()}
 	return render(request, 'home/order_history.html', context)
+
+def list_locations_view(request):
+	context = {'locations':Location.objects.all()}
+	return render(request,'home/list_locations.html',context)
+
+def team_view(request):
+	return render(request,'home/team.html')

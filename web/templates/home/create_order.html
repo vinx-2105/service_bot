@@ -5,9 +5,57 @@
 {% endblock %}
 
 {% block content %}
-<form method="POST" class="post-form">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Create Order</button>
-        </form>	
+
+
+    <div class="row">
+        <div class = "col-md-2">
+
+        </div>
+        <div class="col-md-8">
+                <form method="POST" class="post-form">
+                        {{ form.non_field_errors }}
+
+                        {% for hidden_field in form.hidden_fields %}
+                          {{ hidden_field.errors }}
+                          {{ hidden_field }}
+                        {% endfor %}
+                      
+                        <div class="row">
+                            <div class = "col-md-3">
+                                {{form.source.label_tag}}
+
+                            </div>
+                            <div class="col-md-5">
+                                {{form.source.errors}}
+                                {{form.source}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class = "col-md-3">
+                                {{form.destination.label_tag}}
+
+                            </div>
+                            <div class="col-md-5">
+                                {{form.destination.errors}}
+                                {{form.destination}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+
+                            </div>
+                            <div class="col-md-5">
+                                    <button type="submit" class="save btn btn-default">Create Order</button>
+                            </div>
+                        </div>
+                
+                </form>	
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+        
 {% endblock %}    

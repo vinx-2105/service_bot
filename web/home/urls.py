@@ -19,8 +19,9 @@ from home import views
 
 urlpatterns = [
     url(r'^$', views.home_view, name='home'),
-    url(r'^add_location/', views.add_location_view),
-    url(r'^create_order/', views.create_order_view),
-    url(r'^order_history/', views.order_history_view),
-    
+    url(r'^add_location/', views.add_location_view, name='add_location'),
+    url(r'^list_locations/', views.list_locations_view, name='list_locations'),
+    url(r'^create_order/', views.create_order_view,name='create_order'),
+    url(r'^order_history/', views.order_history_view, name='order_history'),
+    url(r'^team/', views.team_view, name='team'),
 ]

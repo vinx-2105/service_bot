@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Google Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/team.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <!-- Javascript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/team.js"></script>
+{% endblock %}
+{% block title %}
+    <title>Service Bot | Home</title>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+            <h2>THE TEAM</h2>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5">
+            <img class="profile_pic" src="{% static 'home/images/vineet.png' %}" alt="vineet">
+            <div class="profile_detail">
+                <p class="profile_name">Vineet Madan</p>
+                <p id="email1" class="profile_info profile_email">2017csb1119@iitrpr.ac.in</p>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <h2>PIC2</h2>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5">
+            <h2>PIC3</h2>
+        </div>
+        <div class="col-md-5">
+            <h2>PIC4</h2>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        
+        <div class="col-md-4">
+            <h2>PIC5</h2>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+    
+{% endblock %}

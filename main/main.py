@@ -6,6 +6,16 @@ from barcode import PiCam
 import location_api as loc
 import orders_api as order
 
+import atexit
+
+#handles keyboard interrupt
+def exit_handler():
+    del(control)
+    print 'Keyboard Interrupt'
+
+atexit.register(exit_handler)
+
+
 control = MotionControl()
 
 #check for the source location it its same as the current location

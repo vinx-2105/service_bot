@@ -10,9 +10,14 @@ class LocationForm(forms.ModelForm):
         super(LocationForm, self).__init__(*args, **kwargs)
 
 class OrderForm(forms.ModelForm):
+    
     class Meta:
         model = Order
         fields = ['source', 'destination']
+        widgets = {
+            'source':forms.Select,
+            'destination':forms.Select,
+        }
 
     def __init__(self, *args, **kwargs):
         super(OrderForm, self).__init__(*args, **kwargs)
