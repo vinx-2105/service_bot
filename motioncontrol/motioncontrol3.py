@@ -90,7 +90,7 @@ class Control:
 					index=index+1
 					if(char=='S'):	
 									
-						while 1: #newpos!=1 and newpos!=-1:
+						while newpos!=1 and newpos!=-1:
 							print "====going straight on turn"
 							self.motors.moveForward()
 							sleep(sleep1)
