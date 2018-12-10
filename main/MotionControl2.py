@@ -51,15 +51,14 @@ class MotionControl:
 		sleep(0.3)
 
 	def move(self, arr):
-		print("here")
 		index=0
-		self.takeUTurn()
+		#self.takeUTurn()
 		while 1: #index<len(arr)
-			#distance=self.Uv.getDistance()
-			#print distance
+			distance=self.Uv.getDistance()
+			print distance
 #			if distance >200 or distance<50:
 #				continue
-			#continue
+#			continue
 			position=self.sensors.position()
 			#print( "arr: ") 
 			print( "index"+str(index))

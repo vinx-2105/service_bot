@@ -10,7 +10,7 @@ def get_orders():
     if(resp.status_code!=200):
          print("sssssssss      "+str(resp.status_code))
     """
-    response = requests.get('http://127.0.0.1:8000/order_api/order/?format=json&username=admin&api_key=12345')
+    response = requests.get('http://192.168.43.125:8000/order_api/order/?format=json&username=admin&api_key=12345')
     result = []
     if(response.status_code==200):
         #successfully fetched locations data
@@ -21,8 +21,4 @@ def get_orders():
     else:
         return None
 
-<<<<<<< HEAD
-#print(get_orders())
-=======
-print(get_orders())
->>>>>>> 6aad511241448763b8acc66ebaf8e1be2b8327a3
+

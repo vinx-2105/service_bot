@@ -1,10 +1,6 @@
 import sensorcontrol as sc
 import motorcontrol2 as mc
-import distance as gd
 from time import sleep
-
-echoPin=8
-trigPin=10
 
 s1=3
 s2=5
@@ -22,7 +18,6 @@ class MotionControl:
 	def __init__(self):
 		self.sensors=sc.Sensors(s1,s2,s3,s4,s5)
 		self.motors=mc.MotorControl(m11,m12,m21,m22)
-		self.Uv=gd.UV(trigPin,echoPin)
 	#main function
 	def __del__(self):
 		self.motors.stop()
@@ -32,12 +27,7 @@ class MotionControl:
 		self.motors.moveForward()
 		sleep(1)
 		self.motors.stop()
-		self.motors.turnRightHard()
-		sleep(0.4)	
-		self.motors.stop()
-		sleep(0.1)
-						
-		while newpos!=0 and newpos!=1:
+		while newpos!=-1 and newpos!=-2:
 			print( "taking U turn")
 			self.motors.turnRightHard()
 			sleep(0.2)
@@ -51,15 +41,9 @@ class MotionControl:
 		sleep(0.3)
 
 	def move(self, arr):
-		print("here")
 		index=0
 		self.takeUTurn()
 		while 1: #index<len(arr)
-			#distance=self.Uv.getDistance()
-			#print distance
-#			if distance >200 or distance<50:
-#				continue
-			#continue
 			position=self.sensors.position()
 			#print( "arr: ") 
 			print( "index"+str(index))
@@ -72,7 +56,7 @@ class MotionControl:
 				while i<=50:
 					print("checking if line")
 					self.motors.moveForward()
-					sleep(0.013)
+					sleep(0.01)
 					self.motors.stop()
 					sleep(0.03)
 					pos=self.sensors.position()
@@ -80,7 +64,7 @@ class MotionControl:
 					if pos==10 or pos==100:
 						sum1=sum1+1
 					i=i+1
-				if sum1<20:
+				if sum1<12:
 					print( "============")
 					print( "NOT A LINE")
 					print( "============")
@@ -127,10 +111,10 @@ class MotionControl:
 						self.motors.stop()
 						sleep(0.1)
 						self.motors.turnLeftHard()
-						sleep(0.9)  		#changed this from 3 whuch wasworking
+						sleep(0.4)  		#changed this from 3 whuch wasworking
 						self.motors.stop()
 						sleep(0.1)
-						while newpos!=0: #and newpos!=-1:  #1: #and newpos!=2: #added -1
+						while newpos!=0 and newpos!=-1:  #1: #and newpos!=2: #added -1
 							print( "=====going left on turn")
 							self.motors.turnLeftHard()
 							sleep(sleep1/2)
@@ -151,10 +135,10 @@ class MotionControl:
 						self.motors.stop()
 						sleep(0.1)
 						self.motors.turnRightHard()
-						sleep(0.9)
+						sleep(0.4)
 						self.motors.stop()
 						sleep(0.1)
-						while newpos!=0:# and newpos!=1:#  -1:# and newpos!=-2: #added 1
+						while newpos!=0 and newpos!=1:#  -1:# and newpos!=-2: #added 1
 							print("====going right on turn")
 							self.motors.turnRightHard()
 							sleep(sleep1/2)
@@ -179,6 +163,6 @@ class MotionControl:
 				self.motors.turnRightHard()
 			elif position==-1 :
 				self.motors.turnRight()
-			sleep(0.03)
+			sleep(0.04)
 			self.motors.stop();
 			sleep(0.01)

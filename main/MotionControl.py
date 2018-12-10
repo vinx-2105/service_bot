@@ -38,39 +38,39 @@ class MotionControl:
 		sleep(0.1)
 						
 		while newpos!=0 and newpos!=1:
-			print( "taking U turn")
+			#print( "taking U turn")
 			self.motors.turnRightHard()
 			sleep(0.2)
 			self.motors.stop()
 			sleep(0.1)
 			newpos=self.sensors.position()
-			print( "new position:" +str(newpos))	
+			#print( "new position:" +str(newpos))	
 		self.motors.stop()
 		
 		self.motors.moveBackward()
 		sleep(0.3)
+		self.motors.stop()
 
 	def move(self, arr):
-		print("here")
 		index=0
 		self.takeUTurn()
 		while 1: #index<len(arr)
 			#distance=self.Uv.getDistance()
-			#print distance
+			##print (distance)
 #			if distance >200 or distance<50:
 #				continue
-			#continue
+#			continue
 			position=self.sensors.position()
-			#print( "arr: ") 
-			print( "index"+str(index))
+			##print( "arr: ") 
+			#print( "index"+str(index))
 			newpos=53
-			print( "position:" +str(position))
+			#print( "position:" +str(position))
 			if position==10 or position ==100:
 				sleep(0.1)
 				i=1
 				sum1=0
 				while i<=50:
-					print("checking if line")
+					#print("checking if line")
 					self.motors.moveForward()
 					sleep(0.013)
 					self.motors.stop()
@@ -81,9 +81,9 @@ class MotionControl:
 						sum1=sum1+1
 					i=i+1
 				if sum1<20:
-					print( "============")
-					print( "NOT A LINE")
-					print( "============")
+					#print( "============")
+					#print( "NOT A LINE")
+					#print( "============")
 					self.motors.moveForward()
 					sleep(sleep1)
 					continue
@@ -101,20 +101,20 @@ class MotionControl:
 				if index>=len(arr):
 					break
 				else:
-					#print( "========== to turn")+str(arr[index])	
+					##print( "========== to turn")+str(arr[index])	
 					
 					char=arr[index]
 					index=index+1
 					if(char=='S'):	
 									
 						while newpos!=1 and newpos!=-1:
-							print( "====going straight on turn")
+							#print( "====going straight on turn")
 							self.motors.moveForward()
 							sleep(sleep1/2)
 							self.motors.stop()
 							sleep(sleep2)
 							newpos=self.sensors.position()
-							print( "new position:" +str(newpos))
+							#print( "new position:" +str(newpos))
 	
 						self.motors.stop()
 						self.motors.moveForward()
@@ -131,13 +131,13 @@ class MotionControl:
 						self.motors.stop()
 						sleep(0.1)
 						while newpos!=0: #and newpos!=-1:  #1: #and newpos!=2: #added -1
-							print( "=====going left on turn")
+							#print( "=====going left on turn")
 							self.motors.turnLeftHard()
 							sleep(sleep1/2)
 							self.motors.stop()
 							sleep(sleep2)
 							newpos=self.sensors.position()
-							print( "new position:" +str(newpos))
+							#print( "new position:" +str(newpos))
 						self.motors.stop()
 						#self.motors.moveForward()
 						self.motors.stop()
@@ -155,13 +155,13 @@ class MotionControl:
 						self.motors.stop()
 						sleep(0.1)
 						while newpos!=0:# and newpos!=1:#  -1:# and newpos!=-2: #added 1
-							print("====going right on turn")
+							#print("====going right on turn")
 							self.motors.turnRightHard()
 							sleep(sleep1/2)
 							self.motors.stop()
 							sleep(sleep2)
 							newpos=self.sensors.position()
-							print( "new position:" +str(newpos))
+							#print( "new position:" +str(newpos))
 						
 						self.motors.stop()
 						sleep(0.4)
